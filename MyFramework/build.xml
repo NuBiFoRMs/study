@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." name="MyFramework" default="build">
 
-	<target name="build" depends="deleteDir,createDir,createManifest,copyClasses,createJar">
+	<target name="build" depends="deleteDir,createDir,createManifest,copyJar,copyClasses,createJar">
 	</target>
 
 	<target name="deleteDir">
-		<delete dir="target/jarTemp" />
-		<delete dir="target/lib" />
+		<delete dir="target" />
 	</target>
 
 	<target name="createDir">
