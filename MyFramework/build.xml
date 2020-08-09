@@ -6,12 +6,14 @@
 
 	<target name="deleteDir">
 		<delete dir="target/jarTemp" />
+		<delete dir="target/lib" />
 	</target>
 
 	<target name="createDir">
 		<mkdir dir="target" />
 		<mkdir dir="target/jarTemp" />
 		<mkdir dir="target/jarTemp/META-INF" />
+		<mkdir dir="target/lib" />
 	</target>
 
 	<target name="createManifest">
