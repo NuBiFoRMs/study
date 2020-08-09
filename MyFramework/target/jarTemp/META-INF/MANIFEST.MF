@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.10.8
+Created-By: 1.8.0_252-b09 (Oracle Corporation)
+Version: 1.0.0
+Company: Value
+Project: Value
+Java-Version: 1.8.0_252
+Main-Class: com.nubiform.myapp.ApplicationMain
+Class-Path: lib/commons-logging-1.2.jar lib/spring-aop-5.2.8.RELEASE.j
+ ar lib/spring-beans-5.2.8.RELEASE.jar lib/spring-context-5.2.8.RELEAS
+ E.jar lib/spring-core-5.2.8.RELEASE.jar lib/spring-expression-5.2.8.R
+ ELEASE.jar
+
