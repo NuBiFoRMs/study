@@ -26,6 +26,14 @@
 		</manifest>
 	</target>
 
+	<target name="copyJar">
+		<copy todir="target/lib">
+			<fileset dir="lib">
+				<include name="*/**" />
+			</fileset>
+		</copy>
+	</target>
+
 	<target name="copyClasses">
 		<copy todir="target/jarTemp">
 			<fileset dir="bin">

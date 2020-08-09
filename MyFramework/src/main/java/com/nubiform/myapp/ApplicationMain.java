@@ -8,7 +8,7 @@ public class ApplicationMain {
 	public static void main(String[] args) throws Exception {
 		System.out.println("Start Application");
 		
-		ApplicationContext context = new ClassPathXmlApplicationContext("app-context.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("classpath:/spring/context-*.xml");
 		
 		MyBean myBean = null;
 		

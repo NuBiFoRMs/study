@@ -10,5 +10,7 @@
 	<classpathentry kind="lib" path="lib/spring-context-5.2.8.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-core-5.2.8.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-expression-5.2.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/ojdbc8-19.7.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/spring-jdbc-5.2.8.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
