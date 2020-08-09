@@ -17,4 +17,17 @@
 		<property name="password" value="#{jdbcProperties['jdbc.password']}" />
 	</bean>
 	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations">
+			<array>
+				<value>classpath:/query/**/mapper_*_sql.xml</value>
+			</array>
+		</property>
+	</bean>
+	
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	
 </beans>
