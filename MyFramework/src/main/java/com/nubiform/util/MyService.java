@@ -3,6 +3,7 @@ package com.nubiform.util;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 
 public class MyService {
 	public Logger logger = Logger.getLogger(this.getClass());
@@ -13,4 +14,7 @@ public class MyService {
 	public SqlSession getSqlSession() {
 		return sqlSession;
 	}
+	
+	@Autowired
+	public CommonProperty commonProperty;
 }

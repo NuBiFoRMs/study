@@ -9,10 +9,6 @@
 	<configs>
 		<config>src/main/resources/spring/context-application.xml</config>
 		<config>src/main/resources/spring/context-datasource.xml</config>
-		<config>java:com.nubiform.myapp.MyBeanAop</config>
-		<config>java:com.nubiform.myapp.MyBeanEnglish</config>
-		<config>java:com.nubiform.myapp.MyBeanKorean</config>
-		<config>java:com.nubiform.myapp.Name</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
