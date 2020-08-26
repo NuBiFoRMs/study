@@ -16,7 +16,7 @@ public class SampleService extends MyService {
 	
 	public String getValue() {
 		logger.info("Property1 : " + value);
-		logger.info("Property2: " + commonProperty.getProperty("value.value"));
+		logger.info("Property2 : " + commonProperty.getProperty("value.value"));
 		return value;
 	}
 	

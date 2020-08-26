@@ -50,6 +50,7 @@ public class SampleController extends MyController {
 	
 	@RequestMapping(value="getString", method=RequestMethod.GET)
 	public String getString() {
+		sampleService.getValue();
 		return "동해물과백두산이";
 	}
 	
