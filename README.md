@@ -1,10 +1,13 @@
 # study
 
 ## MyFramework
-Sample CLI SpringFramework Application
+Sample CLI SpringFramework App.
 
 ## MySpringBoot
-Sample SpringBoot Application
+Sample SpringBoot App.
 
 ## MyWebFramework
-Sample WEB SpringFramework Application
+Sample WEB SpringFramework App.
+
+## react-app
+Sample React App.
