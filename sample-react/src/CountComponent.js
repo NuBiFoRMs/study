@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 
 class CountComponent extends Component {
-  constructor(props) {
-    super();
-    this.state = {
-      number: 0,
-    };
-  }
+  state = {
+    number: 0,
+  };
   render() {
     const { number } = this.state;
     return (
       <div>
-        <h1>{number}</h1>
+        <h1>{this.props.title}</h1>
+        <h2>{number}</h2>
         <button
           onClick={() => {
-            this.setState({ number: number + 1 });
+            this.setState({ number: number + 1 }, () => {
+              console.log("callback setState");
+            });
           }}
         >
           +1
