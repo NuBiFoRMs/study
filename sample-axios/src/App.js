@@ -36,6 +36,8 @@ class App extends Component {
 
     const { ItemList } = this.state;
     console.log(ItemList);
+
+    const list = ItemList.map(p => <li key={p.id}>{p.filename} {p.metadata}</li>);
     
     return (
       <div className="App">
@@ -53,6 +55,9 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <ul>
+          {list}
+        </ul>
       </div>
     );
   }
