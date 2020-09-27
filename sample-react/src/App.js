@@ -7,10 +7,12 @@ import SayFunction from "./SayFunction";
 import EventPratice from "./EventPratice";
 import EventPraticeFnc from "./EventPraticeFnc";
 import ValidationSample from "./ValidationSample";
+import IterationSample from "./IterationSample";
 
 const App = () => {
   return (
     <Fragment>
+      <IterationSample></IterationSample>
       <ValidationSample></ValidationSample>
       <EventPratice></EventPratice>
       <EventPraticeFnc></EventPraticeFnc>
