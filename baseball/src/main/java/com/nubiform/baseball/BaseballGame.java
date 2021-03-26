@@ -8,6 +8,9 @@ public class BaseballGame {
         if (question == null || "".equals(question))
             throw new IllegalArgumentException("invalid argument");
 
+        if (!question.matches("^[0-9]{3}$]"))
+            throw new IllegalArgumentException("invalid argument");
+
         return null;
     }
 }
