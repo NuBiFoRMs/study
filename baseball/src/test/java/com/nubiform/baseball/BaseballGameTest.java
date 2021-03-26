@@ -15,7 +15,17 @@ public class BaseballGameTest {
     }
 
     @Test
-    public void 입력_값이_없을_경우() {
+    public void 입력_값이_없을_경우_1() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            GameResult gameResult = baseballGame.guess(null);
+            fail();
+        });
+
+        assertEquals("invalid argument", exception.getMessage());
+    }
+
+    @Test
+    public void 입력_값이_없을_경우_2() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             GameResult gameResult = baseballGame.guess("");
             fail();
