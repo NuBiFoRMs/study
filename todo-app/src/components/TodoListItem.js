@@ -9,6 +9,7 @@ import './TodoListItem.scss';
 
 const TodoListItem = ({ todo, onToggle, onRemove }) => {
   const { id, text, checked } = todo;
+  console.log(todo);
   return (
     <div className="TodoListItem">
       <div className={cn('checkbox', { checked })} onClick={() => onToggle(id)}>
@@ -22,4 +23,4 @@ const TodoListItem = ({ todo, onToggle, onRemove }) => {
   );
 };
 
-export default TodoListItem;
+export default React.memo(TodoListItem);
