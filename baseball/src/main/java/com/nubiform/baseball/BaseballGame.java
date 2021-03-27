@@ -1,19 +1,21 @@
 package com.nubiform.baseball;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class BaseballGame {
+
+    private String answer;
+
     public BaseballGame(String answer) {
+        this.answer = answer;
     }
 
     public GameResult guess(String question) {
         if (question == null || "".equals(question))
             throw new IllegalArgumentException("invalid argument");
 
-        if (!question.matches("^[0-9]{3}$]"))
+        if (!question.matches("^[0-9]{3}$"))
             throw new IllegalArgumentException("invalid argument");
 
         Map<String, Integer> duplicateCheck = new HashMap<>();
@@ -25,6 +27,17 @@ public class BaseballGame {
                 duplicateCheck.put(charString, 0);
         }
 
-        return null;
+        GameResult gameResult = new GameResult();
+
+        for (int i = 0; i < question.length(); i++) {
+            char answerChar = this.answer.charAt(i);
+            char questionChar = question.charAt(i);
+
+            if (answerChar == questionChar) gameResult.strikes++;
+        }
+
+        if (gameResult.strikes == 3) gameResult.solved = true;
+
+        return gameResult;
     }
 }

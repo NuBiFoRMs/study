@@ -76,7 +76,7 @@ public class BaseballGameTest {
 
     @Test
     public void 숫자_세_개가_전부_일치하지_않을_경우() {
-        GameResult gameResult = baseballGame.guess("123");
+        GameResult gameResult = baseballGame.guess("456");
 
         assertNotNull(gameResult);
         assertFalse(gameResult.solved);
