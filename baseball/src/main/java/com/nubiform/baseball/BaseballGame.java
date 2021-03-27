@@ -30,10 +30,17 @@ public class BaseballGame {
         GameResult gameResult = new GameResult();
 
         for (int i = 0; i < question.length(); i++) {
-            char answerChar = this.answer.charAt(i);
-            char questionChar = question.charAt(i);
+            for (int j = 0; j < this.answer.length(); j++) {
+                char answerChar = this.answer.charAt(i);
+                char questionChar = question.charAt(j);
 
-            if (answerChar == questionChar) gameResult.strikes++;
+                if (i == j) {
+                    if (answerChar == questionChar) gameResult.strikes++;
+                }
+                else {
+                    if (answerChar == questionChar) gameResult.balls++;
+                }
+            }
         }
 
         if (gameResult.strikes == 3) gameResult.solved = true;
