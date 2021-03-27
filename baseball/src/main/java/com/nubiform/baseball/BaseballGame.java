@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class BaseballGame {
 
+    public static final String REGEX = "^[0-9]{3}$";
+    public static final String INVALID_ARGUMENT = "invalid argument";
     private String answer;
 
     public BaseballGame(String answer) {
@@ -12,33 +14,16 @@ public class BaseballGame {
     }
 
     public GameResult guess(String question) {
-        if (question == null || "".equals(question))
-            throw new IllegalArgumentException("invalid argument");
-
-        if (!question.matches("^[0-9]{3}$"))
-            throw new IllegalArgumentException("invalid argument");
-
-        Map<String, Integer> duplicateCheck = new HashMap<>();
-        for (int i = 0; i < question.length(); i++) {
-            String charString = String.valueOf(question.charAt(i));
-            if (duplicateCheck.containsKey(charString))
-                throw new IllegalArgumentException("invalid argument");
-            else
-                duplicateCheck.put(charString, 0);
-        }
+        if (!validateQuestion(question))
+            throw new IllegalArgumentException(INVALID_ARGUMENT);
 
         GameResult gameResult = new GameResult();
 
         for (int i = 0; i < question.length(); i++) {
             for (int j = 0; j < this.answer.length(); j++) {
-                char answerChar = this.answer.charAt(i);
-                char questionChar = question.charAt(j);
-
-                if (i == j) {
-                    if (answerChar == questionChar) gameResult.strikes++;
-                }
-                else {
-                    if (answerChar == questionChar) gameResult.balls++;
+                if (this.answer.charAt(i) == question.charAt(j)) {
+                    if (i == j) gameResult.strikes++;
+                    else gameResult.balls++;
                 }
             }
         }
@@ -46,5 +31,24 @@ public class BaseballGame {
         if (gameResult.strikes == 3) gameResult.solved = true;
 
         return gameResult;
+    }
+
+    private boolean validateQuestion(String question) {
+        if (question == null || "".equals(question))
+            return false;
+
+        if (!question.matches(REGEX))
+            return false;
+
+        Map<String, Integer> duplicateCheck = new HashMap<>();
+        for (int i = 0; i < question.length(); i++) {
+            String charString = String.valueOf(question.charAt(i));
+            if (duplicateCheck.containsKey(charString))
+                return false;
+            else
+                duplicateCheck.put(charString, 0);
+        }
+
+        return true;
     }
 }
