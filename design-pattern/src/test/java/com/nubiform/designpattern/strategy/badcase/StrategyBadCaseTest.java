@@ -1,4 +1,4 @@
-package com.nubiform.designpattern.strategy;
+package com.nubiform.designpattern.strategy.badcase;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class StrategyTest {
+class StrategyBadCaseTest {
     public static final ByteArrayOutputStream OUT = new ByteArrayOutputStream();
 
     @BeforeEach
@@ -24,13 +24,9 @@ class StrategyTest {
 
     @Test
     public void test() {
-        Moving train = new Train();
-        Moving bus = new Bus();
-        Moving taxi = new Taxi();
-
-        train.setMovableStrategy(new RailRoadStrategy());
-        bus.setMovableStrategy(new RoadStrategy());
-        taxi.setMovableStrategy(new RoadStrategy());
+        Movable train = new Train();
+        Movable bus = new Bus();
+        Movable taxi = new Taxi();
 
         train.move();
         bus.move();
