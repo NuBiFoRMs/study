@@ -10,19 +10,29 @@
 
 ### Singleton
 
+https://refactoring.guru/design-patterns/singleton
+
 ## Structural
 
 ### Composite
 
 ### Decorator
 
+### Proxy
+
+https://refactoring.guru/design-patterns/proxy
+
 ## Behavioral
 
 ### Observer
 
+https://refactoring.guru/design-patterns/observer
+
 ### State
 
 ### Strategy
+
+https://refactoring.guru/design-patterns/strategy
 
 ### Template Method
 
