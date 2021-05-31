@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Optional;
 
 import static java.util.stream.Collectors.toList;
 import static org.junit.jupiter.api.Assertions.*;
@@ -45,5 +46,14 @@ class DishTest {
                 .collect(toList());
 
         collect.forEach(System.out::println);
+    }
+
+    @Test
+    public void findAny() {
+        menu.stream()
+                .filter(Dish::isVegetarian)
+                .findAny()
+                .map(Dish::getName)
+                .ifPresent(System.out::println);
     }
 }
