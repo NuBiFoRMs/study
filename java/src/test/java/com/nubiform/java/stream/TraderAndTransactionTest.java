@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalInt;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -82,5 +83,19 @@ class TraderAndTransactionTest {
                 .map(Transaction::getValue)
                 .reduce(Integer.MAX_VALUE, Integer::min);
         System.out.println(minValue);
+
+        System.out.println("=====");
+
+        int maxInt = transactions.stream()
+                .mapToInt(Transaction::getValue)
+                .max().orElse(0);
+        System.out.println(maxInt);
+
+        System.out.println("=====");
+
+        int minInt = transactions.stream()
+                .mapToInt(Transaction::getValue)
+                .min().orElse(0);
+        System.out.println(minInt);
     }
 }
