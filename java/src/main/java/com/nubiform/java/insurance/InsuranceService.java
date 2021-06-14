@@ -30,6 +30,15 @@ class Insurance {
 public class InsuranceService {
 
     public String getInsuranceNameLegacy(Person person) {
+        if (person != null) {
+            Car car = person.getCar();
+            if (car != null) {
+                Insurance insurance = car.getInsurance();
+                if (insurance != null) {
+                    return insurance.getName();
+                }
+            }
+        }
         return "unknown";
     }
 
@@ -44,6 +53,7 @@ public class InsuranceService {
     public static void main(String[] args) {
         InsuranceService service = new InsuranceService();
 
+        System.out.println(service.getInsuranceNameLegacy(null));
         System.out.println(service.getInsuranceName(null));
     }
 }
