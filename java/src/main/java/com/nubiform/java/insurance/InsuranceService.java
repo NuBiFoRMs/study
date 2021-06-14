@@ -18,21 +18,32 @@ class Car {
     }
 }
 
-public class Insurance {
+class Insurance {
 
     private String name;
 
     public String getName() {
         return name;
     }
+}
 
-    public static void main(String[] args) {
-        String name = Optional.ofNullable(new Person())
+public class InsuranceService {
+
+    public String getInsuranceNameLegacy(Person person) {
+        return "unknown";
+    }
+
+    public String getInsuranceName(Person person) {
+        return Optional.ofNullable(person)
                 .map(Person::getCar)
                 .map(Car::getInsurance)
                 .map(Insurance::getName)
                 .orElse("unknown");
+    }
 
-        System.out.println(name);
+    public static void main(String[] args) {
+        InsuranceService service = new InsuranceService();
+
+        System.out.println(service.getInsuranceName(null));
     }
 }
